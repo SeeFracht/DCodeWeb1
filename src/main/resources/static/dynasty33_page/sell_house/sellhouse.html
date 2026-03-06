@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sell House Information</title>
+    <link rel="stylesheet" href="../../dynasty33_page/sell_house/s_h_style.css">
+</head>
+<body>
+<div class="sell-house-container">
+    <h2>Sell House Information</h2>
+    <form id="sellHouseForm">
+        <div class="form-group">
+            <label for="location">Location:</label>
+            <input type="text" id="location" name="location" required>
+        </div>
+        <div class="form-group">
+            <label for="houseType">House Type:</label>
+            <input type="text" id="houseType" name="houseType" required>
+        </div>
+        <div class="form-group">
+            <label for="floor">Floor:</label>
+            <input type="number" id="floor" name="floor" required>
+        </div>
+        <div class="form-group">
+            <label for="square">Square (m²):</label>
+            <input type="number" id="square" name="square" step="any" required>
+        </div>
+        <div class="form-group">
+            <label for="price">Price (ten thousand):</label>
+            <input type="number" id="price" name="price" step="any" required>
+        </div>
+        <div class="form-group">
+            <label for="yearBuilt">Year Built:</label>
+            <input type="number" id="yearBuilt" name="yearBuilt" required>
+        </div>
+        <div class="form-group">
+            <label for="propertyOwner">Property Owner:</label>
+            <input type="text" id="propertyOwner" name="propertyOwner" required>
+        </div>
+        <div class="form-group">
+            <label for="pOwnerPhone">Owner's Phone:</label>
+            <input type="tel" id="pOwnerPhone" name="pOwnerPhone" required>
+        </div>
+        <div class="form-group">
+            <label for="houseImage">House Image:</label>
+            <input type="file" id="houseImage" name="houseImage" accept="image/*">
+        </div>
+        <div class="form-group">
+            <button type="submit">Submit</button>
+        </div>
+    </form>
+</div>
+
+<!-- 引入Axios -->
+<script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+<!-- JavaScript代码 -->
+<script src="../../dynasty33_page/sell_house/s_h_app.js"></script>
+</body>
+</html>

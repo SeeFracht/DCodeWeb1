@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Houses List</title>
+    <link rel="stylesheet" href="../../dynasty33_page/home/home_style.css">
+    <link rel="stylesheet" href="../../dynasty33_page/home/home_style_carousels.css">
+    <link rel="stylesheet" href="../../dynasty33_page/home/home_style_accordions.css">
+</head>
+<body>
+<div class="popular-resources">
+    <div class="carousel">
+        <div class="carousel-images">
+            <!--<img src="../../dynasty33_page/home/home_resource/apartments-1845884_640.jpg" alt="Popular Resource 1" class="carousel-image">-->
+
+        </div>
+        <button class="carousel-button prev" onclick="moveSlide(-1)">&#10094;</button>
+        <button class="carousel-button next" onclick="moveSlide(1)">&#10095;</button>
+    </div>
+</div>
+<!-- 折叠面板结构 -->
+<div class="collapsible">
+    <button class="collapsible-button">当前热门房源</button>
+    <div class="collapsible-content">
+        <!-- 这里添加折叠面板内部的内容 -->
+        <p>temp content</p>
+
+    </div>
+</div>
+<div class="search-container">
+    <input type="text" id="search-input" placeholder="Search by location...">
+    <button id="search-button">Search</button>
+</div>
+<div class="container">
+    <div class="row" id="house-list-container">
+        <!-- 房源卡片将在这里动态插入 -->
+    </div>
+</div>
+<div id="pagination-container" class="pagination-container">
+    <!-- 分页按钮将在这里动态插入 -->
+</div>
+
+<!-- 引入Axios -->
+<script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+<!-- JavaScript代码 -->
+<script src="../../dynasty33_page/home/home_app.js"></script>
+<script src="../../dynasty33_page/home/home_app_carousels.js"></script>
+<script src="../../dynasty33_page/home/home_app_accordions.js"></script>
+</body>
+</html>

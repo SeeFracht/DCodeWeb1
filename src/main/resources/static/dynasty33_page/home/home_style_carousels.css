@@ -1,0 +1,45 @@
+.popular-resources {
+    position: relative;
+    max-width: 70%; /* 最大宽度 */
+    max-height: 420px;
+    padding-bottom: 4px;
+    overflow: hidden; /* 隐藏溢出部分 */
+}
+
+.carousel {
+    position: relative;
+    width: 100%; /* 确保轮播图占满父容器 */
+    max-height: 400px;
+}
+
+.carousel-images {
+    display: flex; /* 使用 Flexbox 布局 */
+    transition: transform 0.5s ease; /* 平滑过渡效果 */
+    width: 100%; /* 确保轮播图图片容器宽度与 .carousel 相同 */
+}
+
+.carousel-image {
+    width: 100%; /* 使图片宽度与 .carousel-images 相同 */
+    height: auto; /* 保持图片比例 */
+    object-fit: cover; /* 确保图片覆盖整个容器 */
+    flex-shrink: 0; /* 防止图片缩小 */
+}
+
+.carousel-button {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background-color: rgba(255, 255, 255, 0.8); /* 半透明背景 */
+    border: none;
+    cursor: pointer;
+    padding: 10px;
+    z-index: 10; /* 确保按钮在图片上方 */
+}
+
+.prev {
+    left: 10px; /* 左侧按钮位置 */
+}
+
+.next {
+    right: 10px; /* 右侧按钮位置 */
+}

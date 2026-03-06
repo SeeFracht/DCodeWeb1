@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>User List</title>
+    <!-- 引入样式表 -->
+    <link rel="stylesheet" href="u_m_styles.css">
+</head>
+<body>
+<div id="search-container">
+    <input type="text" id="search-input" placeholder="输入用户名...">
+    <button id="search-button">查询</button>
+    <button id="add-user-button" onclick="location.href='../add_user/adduser.html'">新增用户</button>
+</div>
+<div id="user-list-container">
+    <ul id="user-list">
+        <!-- 用户数据将在这里动态插入 -->
+    </ul>
+</div>
+<div id="pagination"></div>
+
+<!-- 引入Axios -->
+<script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+<!-- JavaScript代码 -->
+<script src="u_m_app.js"></script>
+</body>
+</html>

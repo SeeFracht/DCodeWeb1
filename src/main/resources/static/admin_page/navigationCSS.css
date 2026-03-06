@@ -1,0 +1,63 @@
+body {
+    margin: 0;
+}
+
+.image-container img {
+    display: inline-block; /* 使图片以行内块级元素显示 */
+    max-width: 100%; /* 设置图片最大宽度为容器宽度的100% */
+    width: 100%; /* 设置图片宽度为容器宽度的100% */
+    height: auto; /* 高度自动，保持图片比例 */
+    margin-bottom: 0; /* 确保没有底部外边距 */
+    padding: 0; /* 确保没有内边距 */
+}
+
+.top-nav {
+    background-color: #333;
+    color: white;
+    padding: 10px 0;
+}
+
+.container {
+    width: 100%;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.nav-buttons {
+    display: flex;
+    list-style: none;
+    padding: 0;
+    justify-content: center;
+    align-items: center; /* 添加此行以垂直居中对齐 */
+}
+
+.nav-button {
+    padding: 10px 20px;
+    margin-right: 10px;
+    background-color: #f4f4f4;
+    border: none;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.nav-button:hover {
+    background-color: #ddd;
+}
+
+.nav-logout {
+    display: inline-block;
+    padding: 8px;
+    background-size: cover;
+    cursor: pointer;
+    border-radius: 4px; /* 如果需要，可以添加一些圆角 */
+    margin-left: auto; /* 添加此行将登出按钮推向右侧 */
+}
+
+.logout-img {
+    width: 20px;
+    height: 20px;
+}
+
+#contentFrame {
+    border: none;
+}

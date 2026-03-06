@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Top Navigation Bar</title>
+    <link rel="stylesheet" href="../admin_page/navigationCSS.css">
+</head>
+<body>
+<div class="image-container">
+    <img src="../index_sc/lighthouse-1.jpg" alt="DYNASTY33" />
+</div>
+<nav class="top-nav">
+    <div class="container">
+        <div class="nav-buttons">
+            <button class="nav-button" onclick="loadPage('user/user_management/usermanagement.html')">用户管理</button>
+            <button class="nav-button" onclick="loadPage('house/house_management/housemanagement.html')">房源信息管理</button>
+            <button class="nav-button" onclick="loadPage('examine_house/examinehouse.html')">审核房源</button>
+
+            <a href="javascript:void(0);" onclick="logout()" class="nav-button nav-logout">
+                <img class="logout-img" src="../admin_page/navigation_resource/logout.png" alt="Logout" />
+            </a>
+        </div>
+    </div>
+</nav>
+<iframe id="contentFrame" src="" frameborder="0" scrolling="no" width="100%" onload="adjustIframeHeight()"></iframe>
+
+<!-- 引入Axios -->
+<script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+<script>
+    function loadPage(pageUrl) {
+        document.getElementById('contentFrame').src = pageUrl;
+    }
+</script>
+<script>
+    function logout() {
+        // 发送登出请求到后端
+        axios.post('/user/logout').then(response => {
+            // 检查后端响应，如果成功，则清除本地存储并重定向
+            if (response.status === 200) {
+                localStorage.removeItem('user'); // 清除本地存储的用户信息
+                window.location.href = '../login/login.html'; // 重定向到登录页面
+            } else {
+                alert('登出失败');
+            }
+        }).catch(error => {
+            console.error('登出失败:', error);
+            alert('登出失败');
+        });
+    }
+</script>
+<script>
+    function adjustIframeHeight() {
+        var iframe = document.getElementById('contentFrame');
+        try {
+            // 尝试获取iframe内容的实际高度
+            var dHeight = iframe.contentWindow.document.documentElement.scrollHeight;
+            iframe.style.height = dHeight + 'px';
+        } catch (ex) {}
+    }
+    // 定期检查iframe高度，以适应动态内容变化
+    window.setInterval("adjustIframeHeight()", 200);
+</script>
+</body>
+</html>

@@ -1,0 +1,39 @@
+/* m_s_style.css */
+.container {
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+.row {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+}
+
+.house-card {
+    border: 1px solid #ccc;
+    padding: 10px;
+    border-radius: 5px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    width: calc(33.333% - 10px);
+}
+
+.house-card img {
+    width: 100%;
+    height: auto;
+    display: block;
+}
+
+.house-card h3 {
+    margin: 0;
+    font-size: 1.2em;
+}
+
+.house-card p {
+    margin: 5px 0;
+}
+
+#pagination-container {
+    text-align: center;
+    margin-top: 20px;
+}

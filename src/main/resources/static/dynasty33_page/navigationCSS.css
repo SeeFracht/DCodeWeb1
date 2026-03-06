@@ -1,0 +1,57 @@
+/* dynasty33 page */
+body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+    display: grid;
+    grid-template-columns: 250px 1fr; /* 侧边栏宽度和剩余空间 */
+    grid-template-rows: 1fr;
+    height: 100vh;
+}
+
+.sidebar {
+    grid-column: 1 / 2; /* 侧边栏占据第一列 */
+    grid-row: 1 / 2;
+    background-color: #333; /* 侧边栏的背景颜色 */
+    color: white; /* 文字颜色 */
+    overflow-y: auto; /* 如果内容超出侧边栏高度，显示滚动条 */
+    display: flex; /* 使用 Flexbox 布局 */
+    flex-direction: column; /* 子元素垂直排列 */
+    justify-content: space-between; /* 子元素之间的空间均匀分布 */
+    height: 100vh; /* 侧边栏高度设置为视口高度 */
+    padding: 10px 0; /* 顶部和底部的内边距 */
+}
+
+.sidebar ul {
+    list-style: none; /* 移除列表样式 */
+    padding: 0;
+    margin: 0; /* 移除外边距 */
+    flex-grow: 1; /* 列表占据剩余空间 */
+}
+
+.sidebar li {
+    padding: 10px; /* 列表项的内边距 */
+}
+
+.sidebar-logout {
+    width: 20px;
+    height: auto;
+    cursor: pointer;
+    position: absolute; /* 添加绝对定位 */
+    bottom: 10px; /* 距离底部10px */
+    left: 10px; /* 距离左侧10px */
+    background-color: #f8f8f8; /* 设置较浅的背景色 */
+    padding: 10px; /* 如果需要，可以添加一些内边距 */
+    border-radius: 4px; /* 如果需要，可以添加一些圆角 */
+}
+
+#contentFrame {
+    grid-column: 2 / 3; /* iframe占据第二列 */
+    grid-row: 1 / 2;
+}
+
+@media screen and (max-width: 768px) {
+    .sidebar {
+        width: 100%; /* 在小屏幕上，侧边栏宽度为100% */
+        height: auto; /* 高度自适应 */
+    }
+}

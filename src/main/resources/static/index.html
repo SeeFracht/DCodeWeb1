@@ -1,0 +1,122 @@
+<html lang="zh">
+<head>
+    <meta charset="utf-8">
+    <style>
+        /* 添加CSS样式 */
+        body {
+            margin: 0;
+        }
+        .image-container {
+            display: block; /* 使容器以块级元素显示 */
+            margin-left: auto; /* 左边距自动 */
+            margin-right: auto; /* 右边距自动 */
+            margin-bottom: 0;
+            background-color: #00994C; /* 设置容器的背景颜色 */
+            text-align: center; /* 使图片在容器中居中 */
+            overflow: hidden; /* 防止图片超出容器 */
+        }
+        .image-container img {
+            display: inline-block; /* 使图片以行内块级元素显示 */
+            max-width: 100%; /* 设置图片最大宽度为容器宽度的100% */
+            width: 100%; /* 设置图片宽度为容器宽度的100% */
+            height: auto; /* 高度自动，保持图片比例 */
+        }
+        h1 {
+            text-align: center; /* 文字居中 */
+            font-size: 16px; /* 设置字体大小 */
+            color: #f0f0f0; /* 设置字体颜色 */
+            background-color: #006633; /* 设置背景颜色 */
+            padding-top: 8px;
+            padding-bottom: 0;
+            margin-top: 0;
+            margin-bottom: 0;
+            width: 100%; /* 设置宽度为100%，使背景颜色覆盖整行 */
+        }
+        section {
+            position: relative;
+            margin-top: 0;
+            max-width: 100%;
+            height: 32px;
+            background-color: #006633;
+            display: flex; /* 使用弹性盒子布局 */
+            align-items: center; /* 垂直居中对齐 */
+            justify-content: center; /* 水平居中对齐 */
+        }
+        section::before {
+            content: ''; /* 伪元素不包含实际内容 */
+            position: absolute; /* 绝对定位，相对于section定位 */
+            bottom: 0;
+            left: 0;
+            width: 100%;
+            height: 24px;
+            display: block; /* 将伪元素显示为块级元素 */
+            background: linear-gradient(-45deg,transparent 33.33%,#fff 33.33%,#fff 66.666%,transparent 66.666%),
+            linear-gradient(45deg,transparent 33.33%,#fff 33.33%,#fff 66.666%,transparent 66.666%);
+            background-size: 30px 60px;
+        }
+        .pictures {
+            display: flex; /* 设置为Flex容器 */
+            justify-content: center; /* 水平居中 */
+            align-items: center; /* 垂直居中 */
+        }
+        .pictures a {
+            width: 324px;
+            height: 324px;
+            margin-left: auto;
+            margin-right: 12px; /* 添加右边距，以便与下一张图片分隔开 */
+            display: inline-block; /* 以块级元素显示，以便外边距可以使其居中 */
+            transition: transform 0.3s ease; /* 添加过渡效果 */
+        }
+        .pictures a:hover, .pictures a:active {
+            transform: scale(1.05); /* 鼠标悬停或点击时放大 */
+        }
+        .to_list {
+            width: 324px;
+            height: 324px;
+            max-width: 100%; /* 最大宽度不超过容器 */
+            max-height: 100%; /* 最大高度不超过容器 */
+            margin-left: auto;
+            margin-right: 12px; /* 为图片添加右边距，以便与下一张图片分隔开 */
+            display: inline-block; /* 使图片以块级元素显示，以便外边距可以使其居中 */
+        }
+        .business {
+            width: auto;
+            height: 324px;
+            margin-left: 12px;
+            margin-right: 12px;
+            display: inline-block; /* 将图片设置为行内块级元素 */
+        }
+        .bedroom {
+            width: auto;
+            height: 324px;
+            margin-left: 12px;
+            margin-right: auto;
+            display: inline-block; /* 将图片设置为行内块级元素 */
+        }
+        p {
+            text-align: center;
+        }
+    </style>
+    <title>dynasty33</title>
+</head>
+
+<body>
+<div class="image-container">
+    <img src="index_sc/lighthouse-1.jpg" alt="DYNASTY33" />
+</div>
+<h1>这会是您做过的最明智的事情</h1>
+<section></section>
+<div class="pictures">
+    <a href="login/login.html">
+        <img class="to_list" src="index_sc/1732021398757.png" alt="查看资产列表" />
+    </a>
+    <img class="business" src="index_sc/business-7533126_640.webp" alt="Business"/>
+    <img class="bedroom" src="index_sc/bedroom-1872196_640.jpg" alt="Bedroom">
+</div>
+<p>我们的住宅名录比洛圣都的其他任何经纪人都多。在这个城市，我们知道最大和最好就是同一回事。</p>
+<p>这是买方市场，也是个卖方市场。你想要什么，它就是什么。在 DYNASTY 33 ，您的梦想早就被认可了。</p>
+<p>从来没有人在房地产赔过钱。</p>
+<p>对专业人士而言，个人看的没有 DYNASTY 33 远，有时候并不适合去接触他们。别将我们当成房产中介，把我们当成您的朋友吧。一个很爱奉承的朋友，这个朋友好像高中毕业纪念册一样老师在所有东西上放照片，把您已经知道的事情，像“这是浴室”或“这个花园很适合小孩玩耍”的话告诉您，并向您索要一定的抽成。</p>
+<p>立即打电话给 DYNASTY 33 ，轻轻松松买个好房！</p>
+</body>
+</html>

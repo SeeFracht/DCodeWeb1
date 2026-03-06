@@ -1,0 +1,107 @@
+.search-container {
+    position: fixed;
+    top: 20px; /* 根据需要调整 */
+    right: 20px; /* 根据需要调整 */
+    display: flex;
+    align-items: center;
+}
+
+#search-input {
+    padding: 8px;
+    margin-right: 5px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+}
+
+#search-button {
+    padding: 8px 15px;
+    background-color: #007bff;
+    color: white;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+#search-button:hover {
+    background-color: #0056b3;
+}
+
+.container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding-top: 4px; /* 为搜索框留出空间 */
+}
+
+.row {
+    width: 100%;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+}
+
+.house-card {
+    flex: 1 1 48%; /* 每行两张卡片 */
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    padding: 4px;
+    overflow: hidden;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.2);
+}
+
+.house-card img {
+    width: 100%;
+    height: auto;
+    display: block;
+}
+
+.house-card-content {
+    padding: 15px;
+}
+
+.house-card h3 {
+    margin: 0;
+    color: #333;
+}
+
+.house-card p {
+    margin: 5px 0;
+}
+
+.house-image-container {
+    width: 100%;
+    max-width: 200px;
+    height: auto; /* 保持图片的纵横比 */
+    margin-bottom: 10px; /* 添加一些外边距 */
+}
+
+.house-image {
+    width: 100%; /* 使图片填满容器 */
+    height: auto; /* 保持图片的纵横比 */
+    border-radius: 5px; /* 可选：为图片添加圆角 */
+}
+
+.pagination-container {
+    display: flex;
+    justify-content: center;
+    margin-top: 20px;
+}
+
+.pagination-button {
+    padding: 5px 10px;
+    margin-right: 5px;
+    cursor: pointer;
+}
+
+.pagination-button.active {
+    background-color: #007bff;
+    color: white;
+}
+
+/* 响应式设计 */
+@media (max-width: 768px) {
+    .house-card {
+        flex: 1 1 100%; /* 在小屏幕上，每行一张卡片 */
+    }
+}

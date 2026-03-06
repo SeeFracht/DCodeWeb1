@@ -1,0 +1,127 @@
+/* u_m_styles.css */
+body {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding-top: 20px; /* 为搜索框留出空间 */
+}
+
+#search-container {
+    position: absolute;
+    width: 90%;
+    margin-bottom: 4px;
+    top: 20px;
+    left: auto;
+    right: auto;
+    display: flex;
+    align-items: center;
+}
+
+#search-input {
+    padding: 8px;
+    margin-right: 5px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+}
+
+#search-button {
+    padding: 8px 16px;
+    background-color: #007bff;
+    color: white;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+#search-button:hover {
+    background-color: #0056b3;
+}
+
+#add-user-button {
+    padding: 8px 16px;
+    font-weight: 500; /* 字体权重 */
+    color: #fff; /* 文字颜色 */
+    background-color: #007bff; /* 背景颜色 */
+    border: none; /* 无边框 */
+    border-radius: 5px; /* 圆角边框 */
+    cursor: pointer; /* 鼠标悬停时显示指针 */
+    transition: background-color 0.3s ease; /* 平滑过渡效果 */
+    outline: none; /* 去除焦点时的轮廓线 */
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2); /* 添加阴影 */
+    margin-left: auto; /* 将按钮放置在容器的右侧 */
+}
+
+#add-user-button:hover {
+    background-color: #0056b3; /* 悬停时的背景颜色 */
+}
+
+#add-user-button:active {
+    transform: translateY(2px); /* 点击时按钮下移，产生按下效果 */
+    box-shadow: 0 1px 2px rgba(0, 0, 0, 0.2); /* 点击时阴影变小 */
+}
+
+#add-user-button:focus {
+    box-shadow: 0 0 0 3px rgba(0, 123, 255, 0.5); /* 焦点时显示焦点环 */
+}
+
+#user-list-container {
+    width: 80%;
+    margin: 0 auto;
+    padding: 20px;
+}
+
+#user-list {
+    list-style: none;
+    padding: 0;
+}
+
+#user-list li {
+    display: flex; /* 使用Flexbox布局 */
+    flex-direction: column; /* 垂直排列子元素 */
+    align-items: flex-start; /* 子元素靠左对齐 */
+    position: relative; /* 相对定位，用于绝对定位图标 */
+    padding: 10px; /* 内边距 */
+    margin-bottom: 10px; /* 外边距 */
+    background-color: #f9f9f9; /* 背景颜色 */
+    border: 1px solid #ddd; /* 边框 */
+    border-radius: 5px; /* 圆角 */
+}
+
+#user-list li:hover {
+    background-color: #eaeaea;
+}
+
+.delete-icon {
+    position: absolute; /* 绝对定位 */
+    top: 10px; /* 距离顶部10px */
+    right: 10px; /* 距离右侧10px */
+    cursor: pointer;
+    width: 32px; /* 图标宽度 */
+    height: 32px; /* 图标高度 */
+}
+
+.edit-icon {
+    position: absolute;
+    top: 10px;
+    right: 50px; /* 编辑图标向右移动32px + 10px的间距 */
+    cursor: pointer;
+    width: 32px;
+    height: 32px;
+}
+
+#pagination {
+    display: flex;
+    justify-content: center;
+    margin-top: 12px; /* 调整上边距 */
+}
+
+#pagination button {
+    margin-right: 5px;
+    padding: 5px 10px;
+    cursor: pointer;
+}
+
+#pagination button:disabled {
+    cursor: default;
+    opacity: 0.5;
+}

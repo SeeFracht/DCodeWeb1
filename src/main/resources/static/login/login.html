@@ -1,0 +1,332 @@
+<!DOCTYPE html>
+<html lang="en"><!-- Basic -->
+<head>
+	<meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">   
+   
+    <!-- Mobile Metas -->
+    <meta name="viewport" content="width=device-width, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no">
+ 
+     <!-- Site Metas -->
+    <title>Login and Register tabbed form</title>  
+    <meta name="keywords" content="">
+    <meta name="description" content="">
+    <meta name="author" content="">
+
+    <!-- Site Icons -->
+    <link rel="shortcut icon" href="images/favicon.ico" type="image/x-icon">
+    <link rel="apple-touch-icon" href="images/apple-touch-icon.png">
+
+    <!-- Bootstrap CSS -->
+    <link href="css/bootstrap.min.css" rel="stylesheet">
+	<!-- Site CSS -->
+    <link rel="stylesheet" href="css/style.css"> 
+	<!-- Fontawesome CSS -->
+    <link rel="stylesheet" href="css/all.min.css">  	
+    <!-- Responsive CSS -->
+    <link rel="stylesheet" href="css/responsive.css">
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="css/custom.css">
+
+	<style>
+		.modal {
+			display: none;
+			position: fixed;
+			z-index: 1000;
+			left: 0;
+			top: 0;
+			width: 100%;
+			height: 100%;
+			overflow: auto;
+			background-color: rgba(0,0,0,0.4);
+		}
+
+		.modal-dialog {
+			margin: 15% auto;
+			padding: 20px;
+			max-width: 500px;
+		}
+
+		.modal-content {
+			background-color: #fefefe;
+			margin: auto;
+			padding: 20px;
+			border: 1px solid #888;
+			width: 80%;
+		}
+	</style>
+
+    <!--[if lt IE 9]>
+      <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+      <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+    <![endif]-->
+</head>
+
+<body>
+<div id="particles-js" class="main-form-box">
+	<div class="md-form">
+		<div class="container">
+			<div class="row">
+				<div class="col-md-6 offset-md-3">
+					<div class="panel panel-login">
+						<div class="logo-top">
+							<a href="#"><img src="images/logo.png" alt="" /></a>
+						</div>
+						<div class="panel-heading">
+							<div class="row">
+								<div class="col-lg-6 col-sm-6 col-xl-6">
+									<a href="#" class="active" id="login-form-link">Login</a>
+								</div>
+								<div class="col-lg-6 col-sm-6 col-xl-6">
+									<a href="#" id="register-form-link">Register</a>
+								</div>
+								<div class="or">OR</div>
+							</div>
+						</div>
+						<div class="panel-body">
+							<div class="row">
+								<div class="col-lg-12">
+
+									<!--<form id="login-form" action="/user/register" method="post" role="form" style="display: block;">-->
+									<form id="login-form" action="/user/login" method="post" role="form">
+										<div class="form-group">
+											<label class="icon-lp"><i class="fas fa-user-tie"></i></label>
+											<input type="text" name="username" id="username" tabindex="1" class="form-control" placeholder="Username" value="" required="">
+										</div>
+										<div class="form-group">
+											<label class="icon-lp"><i class="fas fa-key"></i></label>
+											<input type="password" name="password" id="password" tabindex="2" class="form-control" placeholder="Password" required="">
+										</div>
+										<div class="che-box">
+											<label class="checkbox-in">
+												<input name="checkbox" type="checkbox" tabindex="3" id="remember"> <span></span>
+												Remember Me
+											</label>
+										</div>
+										<ul>
+											<li>
+												<button class="fb"><i class="fab fa-facebook-f"></i> Connect with Facebook</button>
+											</li>
+											<li>
+												<button class="tw"><i class="fab fa-twitter"></i> Connect with X</button>
+											</li>
+										</ul>
+										<div class="form-group">
+											<div class="row">
+												<div class="col-sm-6 offset-sm-3">
+													<input type="submit" name="login-submit" id="login-submit" tabindex="4" class="form-control btn btn-login" value="Log In">
+												</div>
+											</div>
+										</div>
+										<div class="form-group">
+											<div class="row">
+												<div class="col-lg-12">
+													<div class="text-center">
+														<a href="../temp_page/temp-page.html" tabindex="5" class="forgot-password">Forgot Password?</a>
+													</div>
+												</div>
+											</div>
+										</div>
+									</form>
+
+									<!--<form id="register-form" action="/user/register" method="post" role="form" style="display: none;">-->
+									<form id="register-form" action="/user/register" method="post" role="form">
+										<div class="form-group">
+											<label class="icon-lp"><i class="fas fa-user-tie"></i></label>
+											<input type="text" name="username" id="user-name" tabindex="1" class="form-control" placeholder="Username" value="" required="">
+										</div>
+										<div class="form-group">
+											<label class="icon-lp"><i class="fas fa-envelope"></i></label>
+											<input type="email" name="email" id="email" tabindex="1" class="form-control" placeholder="Email Address" value="" required="">
+										</div>
+										<div class="form-group">
+											<label class="icon-lp"><i class="fas fa-key"></i></label>
+											<input type="password" name="password" id="pass-word" tabindex="2" class="form-control" placeholder="Password" required="">
+										</div>
+										<div class="form-group">
+											<label class="icon-lp"><i class="fas fa-key"></i></label>
+											<input type="password" name="confirmPassword" id="confirm-password" tabindex="2" class="form-control" placeholder="Confirm Password" required="">
+										</div>
+										<div id="error-message" class="error-message" style="display: none; color: red;"></div>
+
+										<ul>
+											<li>
+												<button class="fb"><i class="fab fa-facebook-f"></i> Connect with Facebook</button>
+											</li>
+											<li>
+												<button class="tw"><i class="fab fa-twitter"></i> Connect with X</button>
+											</li>
+										</ul>
+										
+										<div class="che-box">
+											<label class="checkbox-in"> 
+												<input name="checkbox" type="checkbox" id="terms-conditions"> <span></span>I agree to the <a href="../temp_page/temp-page.html"> Terms and Conditions </a> and <a href="../temp_page/temp-page.html">Privacy Policy </a>
+											</label>
+										</div>
+										<div id="checkbox-message" class="checkbox-message" style="display: none; color: red;"></div>
+										
+										<div class="form-group">
+											<div class="row">
+												<div class="col-sm-6 offset-sm-3">
+													<input type="submit" name="register-submit" id="register-submit" tabindex="4" class="form-control btn btn-register" value="Register Now">
+												</div>
+											</div>
+										</div>										
+									</form>
+
+								</div>
+							</div>
+						</div>
+					</div>
+
+					<!-- Modal HTML -->
+					<div id="successModal" class="modal" tabindex="-1" role="dialog">
+						<div class="modal-dialog" role="document">
+							<div class="modal-content">
+								<div class="modal-header">
+									<h5 class="modal-title">Registration Successful</h5>
+								</div>
+								<div class="modal-body">
+									<p>Your registration has been completed successfully.</p>
+								</div>
+								<div class="modal-footer">
+									<button type="button" class="btn btn-primary" data-dismiss="modal">Close</button>
+								</div>
+							</div>
+						</div>
+					</div>
+					
+					<p class="footer-company-name">All Rights Reserved. &copy; 2024</p>
+					
+				</div>
+			</div>
+		</div>	
+	</div>
+</div>
+
+<script src="js/jquery.min.js"></script>
+<script src="js/bootstrap.min.js"></script>
+<script src="js/particles.min.js"></script>
+<script src="js/index.js"></script>
+<script type="text/javascript">
+	$(function() {
+		// 初始化时显示登录表单，隐藏注册表单，并给登录表单链接添加active类
+		$("#login-form").css("display", "block"); // 或者使用 .show() 方法
+		$("#register-form").css("display", "none"); // 或者使用 .hide() 方法
+
+		$('#login-form-link').click(function(e) {
+			$("#login-form").delay(100).fadeIn(100);
+			$("#register-form").fadeOut(100);
+			$('#register-form-link').removeClass('active');
+			$(this).addClass('active');
+			e.preventDefault();
+		});
+		$('#register-form-link').click(function(e) {
+			$("#register-form").delay(100).fadeIn(100);
+			$("#login-form").fadeOut(100);
+			$('#login-form-link').removeClass('active');
+			$(this).addClass('active');
+			e.preventDefault();
+		});
+	});
+
+	$('.form-group input').focus(function () {
+		$(this).parent().addClass('addcolor');
+	}).blur(function () {
+		$(this).parent().removeClass('addcolor');
+	});
+</script>
+<script>
+	/* 注册 */
+	document.getElementById('register-form').addEventListener('submit', function(event) {
+		event.preventDefault(); // 阻止表单默认提交
+
+		var username = document.getElementById('user-name').value;
+		var email = document.getElementById('email').value;
+		var password = document.getElementById('pass-word').value;
+		var confirmPassword = document.getElementById('confirm-password').value;
+		var checkbox = document.getElementById('terms-conditions');
+		var checkboxMessage = document.getElementById('checkbox-message');
+
+		/* 密码比对 */
+		if (password !== confirmPassword) {
+			document.getElementById('error-message').textContent = 'Passwords do not match';
+			document.getElementById('error-message').style.display = 'block';
+			return;
+		} else {
+			document.getElementById('error-message').style.display = 'none';
+		}
+
+		/* 勾选框 */
+		if (!checkbox.checked) {
+			checkboxMessage.textContent = 'You must agree to the Terms and Conditions and Privacy Policy.';
+			checkboxMessage.style.display = 'block';
+			return;
+		} else {
+			checkboxMessage.style.display = 'none';
+		}
+
+		var registerRequest = {
+			username: username,
+			email: email,
+			password: password,
+			confirmPassword: confirmPassword
+		};
+
+		// 使用fetch API向服务器发送POST请求
+		fetch('/user/register', {
+			method: 'POST', // 设置请求方法为POST
+			headers: {
+				'Content-Type': 'application/json' // 设置请求头，指定发送的数据类型为JSON
+			},
+			body: JSON.stringify(registerRequest) // 将registerRequest对象转换为JSON字符串作为请求体
+		})
+				.then(response => response.json()) // 处理响应，将响应体转换为JSON对象
+				.then(data => {
+					if (data.message) {
+						// 显示模态框
+						$('#successModal').modal('show');
+						// 设置2秒后关闭模态框并刷新页面
+						setTimeout(function () {
+							$('#successModal').modal('hide');
+							window.location.reload();
+						}, 2000);
+					}
+				})
+				.catch(error => console.error('Error:', error)); // 如果请求过程中出现错误，打印错误信息
+	});
+</script>
+<script>
+	/* 登录 */
+	document.getElementById('login-form').addEventListener('submit', function(event) {
+		event.preventDefault(); // 阻止表单默认提交
+
+		var username = document.getElementById('username').value;
+		var password = document.getElementById('password').value;
+
+		fetch('/user/login', {
+			method: 'POST',
+			headers: {
+				'Content-Type': 'application/json'
+			},
+			body: JSON.stringify({
+				username: username,
+				password: password
+			})
+		})
+				.then(response => response.json())
+				.then(data => {
+					if (data.message === "Login successful") {
+						// 登录成功，跳转到指定页面
+						window.location.href = data.redirectUrl;
+					} else {
+						// 登录失败，显示错误消息
+						alert(data.message);
+					}
+				})
+				.catch(error => console.error('Error:', error));
+	});
+</script>
+
+</body>
+</html>
