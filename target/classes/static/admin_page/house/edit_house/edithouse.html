@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Edit House</title>
+    <link rel="stylesheet" href="../../../admin_page/house/edit_house/e_h_style.css">
+</head>
+<body>
+<div class="edit-house-container">
+    <h2>Edit House Information</h2>
+    <form id="editHouseForm">
+        <div class="form-group">
+            <label for="location">Location:</label>
+            <input type="text" id="location" name="location" required>
+        </div>
+        <div class="form-group">
+            <label for="houseType">House Type:</label>
+            <input type="text" id="houseType" name="houseType" required>
+        </div>
+        <div class="form-group">
+            <label for="floor">Floor:</label>
+            <input type="number" id="floor" name="floor" required>
+        </div>
+        <div class="form-group">
+            <label for="square">Square (m²):</label>
+            <input type="number" id="square" name="square" step="any" required>
+        </div>
+        <div class="form-group">
+            <label for="price">Price (ten thousand):</label>
+            <input type="number" id="price" name="price" step="any" required>
+        </div>
+        <div class="form-group">
+            <label for="yearBuilt">Year Built:</label>
+            <input type="number" id="yearBuilt" name="yearBuilt" required>
+        </div>
+        <div class="form-group">
+            <label for="status">Status:</label>
+            <select id="status" name="status">
+                <option value="0">正在出售</option>
+                <option value="1">已售</option>
+                <option value="2">待审核</option>
+                <option value="9">锁定</option>
+            </select>
+        </div>
+        <div class="form-group">
+            <label for="propertyOwner">Property Owner:</label>
+            <input type="text" id="propertyOwner" name="propertyOwner" required>
+        </div>
+        <div class="form-group">
+            <label for="pOwnerPhone">Owner's Phone:</label>
+            <input type="tel" id="pOwnerPhone" name="pOwnerPhone" required>
+        </div>
+        <div class="form-group">
+            <button type="submit">Update</button>
+        </div>
+    </form>
+</div>
+
+<!-- 引入Axios -->
+<script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+<!-- JavaScript代码 -->
+<script src="../../../admin_page/house/edit_house/e_h_app.js"></script>
+</body>
+</html>

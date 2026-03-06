@@ -1,0 +1,46 @@
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 20px;
+}
+
+.personal-center-container {
+    max-width: 100%;
+    margin: 0 auto;
+    text-align: center;
+}
+
+.card-container {
+    display: flex;
+    flex-direction: column; /* 设置为列布局 */
+    align-items: center; /* 水平居中 */
+}
+
+.card {
+    background-color: #f4f4f4;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    padding: 20px;
+    width: 90%; /* 设置宽度为容器的90% */
+    margin: 10px 0; /* 上下外边距 */
+    cursor: pointer; /* 鼠标悬停时显示指针 */
+    transition: transform 0.2s; /* 添加过渡效果 */
+    display: flex; /* 使用Flexbox布局 */
+    align-items: center; /* 垂直居中 */
+    justify-content: flex-start; /* 水平起始对齐 */
+}
+
+.card img {
+    width: 50px; /* 设置图片宽度 */
+    height: auto; /* 保持图片比例 */
+    margin-right: 15px; /* 图片和文字之间的间距 */
+}
+
+.card h3 {
+    margin: 0; /* 去掉默认的外边距 */
+    font-size: 1.2rem; /* 可以根据需要调整字体大小 */
+}
+
+.card:hover {
+    transform: scale(1.05); /* 悬停时放大卡片 */
+}

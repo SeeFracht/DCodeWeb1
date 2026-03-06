@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sidebar Navigation</title>
+    <link rel="stylesheet" href="../dynasty33_page/navigationCSS.css">
+</head>
+<body>
+<div class="sidebar">
+    <ul>
+        <li><button onclick="loadPage('../dynasty33_page/home/home.html')">首页</button></li>
+        <li><button onclick="loadPage('../dynasty33_page/personal_center/personalcenter.html')">个人中心</button></li>
+        <li><button >temp002</button></li>
+        <li><button >temp003</button></li>
+
+        <!-- 添加登出按钮 -->
+        <img src="../dynasty33_page/navigation_resource/logout.png" alt="Logout" onclick="logout()" class="sidebar-logout">
+    </ul>
+</div>
+<iframe id="contentFrame" src="" frameborder="0" width="100%" onload="adjustIframeHeight()"></iframe>
+
+<!-- 引入Axios -->
+<script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+<script>
+    function loadPage(pageUrl) {
+        document.getElementById('contentFrame').src = pageUrl;
+    }
+
+    function adjustIframeHeight() {
+        var iframe = document.getElementById('contentFrame');
+        try {
+            // 尝试获取iframe内容的实际高度
+            var dHeight = iframe.contentWindow.document.documentElement.scrollHeight;
+            iframe.style.height = dHeight + 'px';
+        } catch (ex) {}
+    }
+    // 定期检查iframe高度，以适应动态内容变化
+    window.setInterval("adjustIframeHeight()", 200);
+</script>
+<script>
+    function logout() {
+        // 发送登出请求到后端
+        axios.post('/user/logout').then(response => {
+            // 检查后端响应，如果成功，则清除本地存储并重定向
+            if (response.status === 200) {
+                localStorage.removeItem('user'); // 清除本地存储的用户信息
+                window.location.href = '../login/login.html'; // 重定向到登录页面
+            } else {
+                alert('登出失败');
+            }
+        }).catch(error => {
+            console.error('登出失败:', error);
+            alert('登出失败');
+        });
+    }
+</script>
+</body>
+</html>

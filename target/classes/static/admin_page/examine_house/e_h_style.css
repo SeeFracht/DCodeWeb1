@@ -1,0 +1,78 @@
+#search-input {
+    margin-left: 10px;
+    padding: 5px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+}
+
+#search-button {
+    margin-left: 5px;
+    padding: 5px 10px;
+    background-color: #007bff;
+    color: white;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+#search-button:hover {
+    background-color: #0056b3;
+}
+
+#house-list-container {
+    width: 80%;
+    margin: 20px auto;
+    padding: 20px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+}
+
+.house-item {
+    border-bottom: 1px solid #eee;
+    padding: 10px;
+    margin-bottom: 10px;
+}
+
+.house-item:last-child {
+    border-bottom: none;
+}
+
+.house-item h3 {
+    margin-top: 0;
+    color: #333;
+}
+
+.house-item p {
+    margin: 5px 0;
+}
+
+.house-image-container {
+    width: 100%;
+    max-width: 200px;
+    height: auto; /* 保持图片的纵横比 */
+    margin-bottom: 10px; /* 添加一些外边距 */
+}
+
+.house-image {
+    width: 100%; /* 使图片填满容器 */
+    height: auto; /* 保持图片的纵横比 */
+    border-radius: 5px; /* 可选：为图片添加圆角 */
+}
+
+#pagination-container {
+    text-align: center;
+    margin-top: 20px;
+}
+
+.pagination-button {
+    padding: 5px 10px;
+    margin: 0 5px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.pagination-button.active {
+    background-color: #007bff;
+    color: white;
+}
